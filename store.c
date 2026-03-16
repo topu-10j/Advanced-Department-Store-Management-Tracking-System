@@ -25,7 +25,6 @@ int main()
     {
         showMain_Menu();
         printf("\nEnter your choice (0-8): ");
-        scanf("%d", &choice);
         // jodi keo char type kore
         if (scanf("%d", &choice) != 1)
         {
