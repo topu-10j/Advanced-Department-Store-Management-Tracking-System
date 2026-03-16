@@ -87,24 +87,24 @@ void showMain_Menu()
     printf("\n\t    ADVANCE DEPARTMENT STORE MANAGEMENT & TRACKING SYSTEM");
     printf("\n\t      Version: 1.0 | Status: Administrator Connected");
     printf("\n\t  ══════════════════════════════════════════════════════════");
-    printf("\n\t [SYSTEM DASHBOARD]                            [%S]", time_str);
+    printf("\n\t [SYSTEM DASHBOARD]                            [%s]", time_str);
     printf("\n\t [Date: %s]", date);
 
     printf("\n\n\t -----------------------------STATS-----------------------");
-    printf("\n\t  Total Products: 2,547     |    Low Stock: 12 Items");
-    printf("\n\t  Active Staff: 48          |    Today's Sales: 35,000");
-    printf("\n\t  ---------------------------------------------------------");
+    printf("\n\t    Total Products: 2,547     |    Low Stock: 12 Items");
+    printf("\n\t    Active Staff: 48          |    Today's Sales: 35,000");
+    printf("\n\t  ----------------------------------------------------------");
 
-    printf("\n\n\t1. Product Management");
-    printf("\n\t 2. Inventory Management");
-    printf("\n\t 3. Employee Management");
-    printf("\n\t 4. Sales & Billing");
-    printf("\n\t 5. Customer Management");
-    printf("\n\t 6. Reports & Analytics");
-    printf("\n\t 7. Store Navigation");
-    printf("\n\t 8. Settings");
-    printf("\n\t 0. Exit Syatem");
+    printf("\n\n\t  1. Product Management");
+    printf("\n\t   2. Inventory Management");
+    printf("\n\t   3. Employee Management");
+    printf("\n\t   4. Sales & Billing");
+    printf("\n\t   5. Customer Management");
+    printf("\n\t   6. Reports & Analytics");
+    printf("\n\t   7. Store Navigation");
+    printf("\n\t   8. Settings");
+    printf("\n\t   0. Exit Syatem");
 
-    printf("\n\n\t ============================================================");
+    printf("\n\n\t=============================================================");
     printf("\n\t  Select an option [0-8]: ");
 }
