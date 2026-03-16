@@ -96,7 +96,7 @@ void showMain_Menu()
     printf("\n\t  ║          ADVANCE DEPARTMENT STORE MANAGEMENT             ║");
     printf("\n\t  ║                 & TRACKING SYSTEM                        ║");
     printf("\n\t  ╠══════════════════════════════════════════════════════════╣");
-    printf("\n\t  ║  Version: 1.0           Status:[Administrator Connected] ║");
+    printf("\n\t  ║  Version: 1.0           Status: [Administrator Connected]║");
     printf("\n\t  ╚══════════════════════════════════════════════════════════╝");
 
     printf("\n\t   [DASHBOARD]                              [TIME: %s]", time_str);
