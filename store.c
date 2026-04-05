@@ -25,8 +25,6 @@ int main()
     {
         showMain_Menu();
         printf("\nEnter your choice (0-8): ");
-        scanf("%d", &choice);
-        // jodi keo char type kore
         if (scanf("%d", &choice) != 1)
         {
             printf("\n\t  [!] Invalid Input! Please enter a number (0-8).");
@@ -96,7 +94,7 @@ void showMain_Menu()
     printf("\n\t  ║          ADVANCE DEPARTMENT STORE MANAGEMENT             ║");
     printf("\n\t  ║                 & TRACKING SYSTEM                        ║");
     printf("\n\t  ╠══════════════════════════════════════════════════════════╣");
-    printf("\n\t  ║  Version: 1.0           Status:[Administrator Connected] ║");
+    printf("\n\t  ║  Version: 1.0           Status: [Administrator Connected]║");
     printf("\n\t  ╚══════════════════════════════════════════════════════════╝");
 
     printf("\n\t   [DASHBOARD]                              [TIME: %s]", time_str);
@@ -116,3 +114,36 @@ void showMain_Menu()
     printf("\n\n\t  ══════════════════════════════════════════════════════════");
     printf("\n\t  Select an option [0-8]: ");
 }
+
+void clearScreen() {
+    system("cls");
+}
+
+void auto_Record(char *action) {
+    (void)action; // placeholder for logging integration
+}
+
+void sms_Alert(char *type, char *message) {
+    printf("\n\t[SMS Alert] %s: %s\n", type, message);
+}
+
+void customer_Management() {
+    clearScreen();
+    printf("\n\tCustomer management is under development.\n");
+}
+
+void reports_Analytics() {
+    clearScreen();
+    printf("\n\tReports & analytics are under development.\n");
+}
+
+void store_Navigation() {
+    clearScreen();
+    printf("\n\tStore navigation is under development.\n");
+}
+
+void settings() {
+    clearScreen();
+    printf("\n\tSystem settings are under development.\n");
+}
+
