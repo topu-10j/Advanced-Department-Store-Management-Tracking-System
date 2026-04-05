@@ -105,7 +105,7 @@ void addproduct()
 
     productCount++;
 
-    printf("\n\t ✅ Product added successfully!");
+    printf("\n\t Product added successfully!");
     printf("\n\t Total Products: %d", productCount);
 
     auto_Record("New product added");
