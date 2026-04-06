@@ -4,40 +4,7 @@
 #include <string.h>
 #include <time.h>
 #include "utils.h"
-
-extern struct Product
-{
-    int id;
-    char name[100];
-    char category[50];
-    float price;
-    int stock;
-    char expiryDate[20];
-} products[1000];
-extern int productCount;
-
-extern struct Bill
-{
-    int billNo;
-    int customerId;
-    char customerName[100];
-    char date[20];
-    float amount;
-    int items;
-    char paymentMethod[20];
-} bills[1000];
-extern int billCount;
-
-extern struct BillItem
-{
-    int billNo;
-    int productId;
-    char productName[100];
-    int quantity;
-    float price;
-    float total;
-} billItems[5000];
-extern int billItemCount;
+#include "shared.h"
 
 struct ProductSales
 {

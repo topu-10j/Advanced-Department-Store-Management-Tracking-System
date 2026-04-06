@@ -343,6 +343,7 @@ int getProductDepartment(int productId)
 }
 
 // Generate turn-by-turn directions
+int getEdgeDistance(struct Graph *graph, int src, int dest);
 char *generateDirections(int path[], int pathLength, int startDept, int endDept)
 {
     static char directions[1000];

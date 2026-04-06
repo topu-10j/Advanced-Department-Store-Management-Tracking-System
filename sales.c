@@ -4,28 +4,10 @@
 #include <string.h>
 #include <time.h>
 #include "utils.h"
+#include "shared.h"
 
-struct Product
-{
-    int id;
-    char name[100];
-    char category[50];
-    float price;
-    int stock;
-    char expiryDate[20];
-};
-
-// bill
-struct Bill
-{
-    int billNo;
-    int customerId;
-    char customerName[100];
-    char date[20];
-    float amount;
-    int items;
-    char paymentMethod[20];
-};
+struct BillItem billItems[5000];
+int billItemCount = 0;
 
 struct Queue
 {

@@ -16,7 +16,7 @@ struct product
     char expiryDate[20];
 };
 
-extern struct product products[1000];
+extern struct Product products[1000];
 extern int productCount;
 
 void clearScreen();
