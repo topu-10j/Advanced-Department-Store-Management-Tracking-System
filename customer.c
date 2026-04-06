@@ -23,7 +23,7 @@ struct PurchaseHistory
     int customerId;
     int billNo;
     float amount;
-    char date[20]
+    char date[20];
 };
 
 struct CustomerBill

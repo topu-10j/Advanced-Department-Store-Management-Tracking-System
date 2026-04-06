@@ -4,6 +4,7 @@
 #include <string.h>
 #include <limits.h>
 #include "utils.h"
+#include "shared.h"
 
 struct AdjListNode
 {
@@ -41,16 +42,6 @@ struct ProductLocation
     int departmentId;
     int shelfNo;
     char aisle[10];
-};
-
-struct Product
-{
-    int id;
-    char name[100];
-    char category[50];
-    float price;
-    int stock;
-    char expiryDate[20];
 };
 
 // Path result structure
@@ -331,19 +322,6 @@ void mapProductToDepartment(int productId, char *productName, char *category)
 // Sync product locations from product database
 void syncProductLocations()
 {
-    extern struct Product
-    {
-        int id;
-        char name[100];
-        char category[50];
-        float price;
-        int stock;
-        char expiryDate[20];
-    } products[1000];
-    extern int productCount;
-
-    productLocationCount = 0;
-
     for (int i = 0; i < productCount; i++)
     {
         mapProductToDepartment(products[i].id, products[i].name, products[i].category);
@@ -457,9 +435,6 @@ void findShortestPathToProduct()
     // Find product
     int productDept = getProductDepartment(productId);
     char productName[100] = "";
-
-    extern struct Product products[1000];
-    extern int productCount;
 
     for (int i = 0; i < productCount; i++)
     {

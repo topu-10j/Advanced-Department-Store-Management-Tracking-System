@@ -4,6 +4,7 @@
 #include <string.h>
 #include <time.h>
 #include "utils.h"
+#include "shared.h"
 
 struct product
 {
