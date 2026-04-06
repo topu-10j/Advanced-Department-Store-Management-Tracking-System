@@ -1,4 +1,10 @@
+// reports and analytics system
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include <time.h>
+#include "utils.h"
+
 extern struct Product
 {
     int id;

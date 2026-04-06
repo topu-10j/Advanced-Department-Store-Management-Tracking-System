@@ -1,7 +1,9 @@
+// settings
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include "utils.h"
 
 struct SystemConfig
 {
@@ -217,7 +219,7 @@ void systemConfiguration()
     } while (subchoice != 0);
 }
 
-// BACKUP & RESTORE 
+// BACKUP & RESTORE
 
 void createBackup()
 {
@@ -456,7 +458,7 @@ void restoreData()
     }
 }
 
-// USER PERMISSIONS 
+// USER PERMISSIONS
 
 int checkPermission(char *requiredRole)
 {
@@ -741,7 +743,7 @@ void discountSettings()
     } while (subchoice != 0);
 }
 
-//SETTINGS MAIN MENU
+// SETTINGS MAIN MENU
 
 void settings()
 {
