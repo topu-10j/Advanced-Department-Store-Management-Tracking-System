@@ -3,6 +3,19 @@
 #include <time.h>
 #include "utils.h"
 
+struct Product
+{
+    char name[50];
+    float price;
+    int stock;
+};
+
+struct Bill
+{
+    char date[20];
+    float amount;
+};
+
 // main menu
 void showMain_Menu();
 void product_Management();
@@ -90,6 +103,30 @@ void showMain_Menu()
     strftime(date, 20, "%d-%b-%Y", tm_info);
     strftime(time_str, 20, "%I:%M %p", tm_info);
 
+    extern int productCount;
+    extern int employeeCount;
+
+    int lowStock = 0;
+    extern struct Product products[1000];
+    for (int i = 0; i < productCount; i++)
+    {
+        if (products[i].stock < 10)
+            lowStock++;
+    }
+
+    float todaySales = 0;
+    extern struct Bill bills[1000];
+    extern int billCount;
+    char today[20];
+    strftime(today, 20, "%d-%m-%Y", tm_info);
+    for (int i = 0; i < billCount; i++)
+    {
+        if (strcmp(bills[i].date, today) == 0)
+        {
+            todaySales += bills[i].amount;
+        }
+    }
+
     printf("\n\t             ADVANCE DEPARTMENT STORE MANAGEMENT              ");
     printf("\n\t                    & TRACKING SYSTEM                         ");
     printf("\n\t      --------------------------------------------------");
@@ -100,8 +137,8 @@ void showMain_Menu()
     printf("\n\t   [DATE: %s]", date);
 
     printf("\n\n\t   ----------- SYSTEM STATISTICS (REAL-TIME) -----------");
-    printf("\n\t    Total Products : 2,547    |    Low Stock    : 12");
-    printf("\n\t    Active Staff   : 48       |    Today's Sales: 35,000");
+    printf("\n\t    Total Products : %d   |    Low Stock    : %d", productCount, lowStock);
+    printf("\n\t    Active Staff   : %d      |    Today's Sales: %.2f", employeeCount, todaySales);
     printf("\n\t   -----------------------------------------------------");
 
     printf("\n\n\t   [1] Product Management     |   [5] Customer Management");
