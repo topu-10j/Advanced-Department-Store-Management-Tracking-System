@@ -182,7 +182,7 @@ void generateBill()
 
         if (!found)
         {
-            printf("\n\t ❌ Product not found!");
+            printf("\n\t Product not found!");
         }
 
         printf("\n\n\t Add more items? (1=Yes, 0=No): ");
@@ -194,23 +194,23 @@ void generateBill()
     scanf("%s", bills[billCount].paymentMethod);
 
     // Show bill summary
-    printf("\n\t ═══════════════════════════════════");
+    printf("\n\t -----------------------------------");
     printf("\n\t           BILL SUMMARY");
-    printf("\n\t ═══════════════════════════════════");
+    printf("\n\t -----------------------------------");
     printf("\n\t Bill No: %d", bills[billCount].billNo);
     printf("\n\t Customer: %s", bills[billCount].customerName);
     printf("\n\t Date: %s", bills[billCount].date);
     printf("\n\t Total Items: %d", bills[billCount].items);
-    printf("\n\t Total Amount: ৳%.2f", bills[billCount].amount);
+    printf("\n\t Total Amount: %.2f", bills[billCount].amount);
     printf("\n\t Payment: %s", bills[billCount].paymentMethod);
-    printf("\n\t ═══════════════════════════════════");
+    printf("\n\t -----------------------------------");
 
     // Add to billing queue
     addToQueue(bills[billCount].billNo);
 
     billCount++;
 
-    printf("\n\n\t ✅ Bill generated successfully!");
+    printf("\n\n\t Bill generated successfully!");
     printf("\n\t Customers in queue: %d", billingQueue.size);
     auto_Record("New bill generated");
 }
@@ -231,7 +231,7 @@ void viewAllBills()
 
     printf("\n\t %-8s %-15s %-12s %-10s %-10s %-8s",
            "Bill No", "Customer", "Date", "Items", "Amount", "Payment");
-    printf("\n\t────────────────────────────────────────────────────────────");
+    printf("\n\t-------------------------------------------------------------- ");
 
     float totalRevenue = 0;
     for (int i = 0; i < billCount; i++)
@@ -246,9 +246,9 @@ void viewAllBills()
         totalRevenue += bills[i].amount;
     }
 
-    printf("\n\t────────────────────────────────────────────────────────────");
+    printf("\n\t-------------------------------------------------------------- ");
     printf("\n\t Total Bills: %d", billCount);
-    printf("\n\t Total Revenue: ৳%.2f", totalRevenue);
+    printf("\n\t Total Revenue: %.2f", totalRevenue);
 
     // Queue status
     printf("\n\n\t Billing Queue Status:");
@@ -285,7 +285,7 @@ void processReturn()
             printf("\n\t Bill Found:");
             printf("\n\t Customer: %s", bills[i].customerName);
             printf("\n\t Date: %s", bills[i].date);
-            printf("\n\t Amount: ৳%.2f", bills[i].amount);
+            printf("\n\t Amount: %.2f", bills[i].amount);
 
             printf("\n\n\t Refund Amount: ৳%.2f", bills[i].amount);
             printf("\n\t Confirm return? (1=Yes, 0=No): ");
@@ -296,13 +296,13 @@ void processReturn()
             {
                 // Add to return stack
                 pushToStack(billNo);
-                printf("\n\t ✅ Return processed successfully!");
-                printf("\n\t Refund amount: ৳%.2f", bills[i].amount);
+                printf("\n\t Return processed successfully!");
+                printf("\n\t Refund amount: %.2f", bills[i].amount);
                 auto_Record("Return processed");
             }
             else
             {
-                printf("\n\t ❌ Return cancelled!");
+                printf("\n\t Return cancelled!");
             }
             break;
         }
@@ -310,7 +310,7 @@ void processReturn()
 
     if (!found)
     {
-        printf("\n\t ❌ Bill not found!");
+        printf("\n\t Bill not found!");
     }
 
     // Show return stack
@@ -346,7 +346,7 @@ void dailySalesReport()
     strftime(today, 20, "%d-%m-%Y", tm_info);
 
     printf("\n\t Date: %s", today);
-    printf("\n\t═══════════════════════════════════\n");
+    printf("\n\t--------------------------------------\n");
 
     int dailyBillCount = 0;
     float dailyRevenue = 0;
@@ -385,11 +385,11 @@ void dailySalesReport()
     else
     {
         printf("\n\t Total Bills: %d", dailyBillCount);
-        printf("\n\t Total Revenue: ৳%.2f", dailyRevenue);
-        printf("\n\t Average Bill: ৳%.2f", dailyRevenue / dailyBillCount);
+        printf("\n\t Total Revenue: %.2f", dailyRevenue);
+        printf("\n\t Average Bill: %.2f", dailyRevenue / dailyBillCount);
 
         printf("\n\n\t Payment Method Breakdown:");
-        printf("\n\t ───────────────────────────");
+        printf("\n\t --------------------------------------");
         printf("\n\t Cash   : %d bills (৳%.2f)", cashCount, cashAmount);
         printf("\n\t Card   : %d bills (৳%.2f)", cardCount, cardAmount);
         printf("\n\t Mobile : %d bills (৳%.2f)", mobileCount, mobileAmount);
@@ -398,7 +398,7 @@ void dailySalesReport()
         printf("\n\n\t Today's Bills:");
         printf("\n\t %-8s %-15s %-10s",
                "Bill No", "Customer", "Amount");
-        printf("\n\t─────────────────────────");
+        printf("\n\t--------------------------------------");
 
         for (int i = 0; i < billCount; i++)
         {
@@ -426,15 +426,15 @@ void sales_Billing()
     do
     {
         clearScreen();
-        printf("\n\t═══════════════════════════════════════");
+        printf("\n\t--------------------------------------");
         printf("\n\t         SALES & BILLING");
-        printf("\n\t═══════════════════════════════════════");
+        printf("\n\t--------------------------------------");
         printf("\n\t 1. Generate New Bill");
         printf("\n\t 2. View All Bills/Invoices");
         printf("\n\t 3. Process Return/Exchange");
         printf("\n\t 4. Daily Sales Report");
         printf("\n\t 0. Back to Main Menu");
-        printf("\n\t═══════════════════════════════════════");
+        printf("\n\t--------------------------------------");
         printf("\n\t Total Bills: %d", billCount);
         printf("\n\t Queue Size: %d", billingQueue.size);
         printf("\n\t Returns Pending: %d", returnStack.top + 1);
